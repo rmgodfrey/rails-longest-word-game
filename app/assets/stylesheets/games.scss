@@ -1,13 +1,16 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$blue: #4187ff;
+$light-gray: #aaa;
+$dark-blue: #1b396d;
 
 body {
   margin: 32px;
+  font-family: sans-serif;
 }
 
 h1 {
-  font-family: sans-serif;
   font-weight: normal;
 }
 
@@ -15,6 +18,7 @@ h1 {
   display: flex;
   padding: 0;
   gap: 12px;
+  margin-bottom: 32px;
 }
 
 .letter {
@@ -32,4 +36,48 @@ h1 {
   justify-content: center;
   border: 1px solid rgb(45, 54, 129);
   box-shadow: 5px 4px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+label {
+  margin: 8px 0;
+  display: block;
+}
+
+input {
+  padding: 16px;
+  font-size: inherit;
+  border: 1px solid $light-gray;
+  border-right: none;
+  flex-grow: 1;
+
+  &[type="submit"] {
+    background-color: $blue;
+    color: white;
+    cursor: pointer;
+    border-color: $dark-blue;
+    flex-grow: 0;
+
+    &:focus {
+      border: 1px dashed $dark-blue;
+    }
+
+    &:active {
+      background-color: $dark-blue;
+    }
+  }
+
+  &:first-child {
+    border-radius: 5px 0 0 5px;
+  }
+
+  &:last-child {
+    border-radius: 0 5px 5px 0;
+    border-right: 1px solid $dark-blue;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid black;
+    border-right: inherit;
+  }
 }

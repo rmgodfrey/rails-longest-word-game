@@ -6,5 +6,7 @@ class GamesController < ApplicationController
     @letters = NUMBER_OF_LETTERS.times.map { LETTERS.sample }
   end
 
-  def score; end
+  def score
+
+  end
 end
